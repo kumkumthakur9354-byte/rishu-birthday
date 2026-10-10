@@ -1538,6 +1538,45 @@
       letter-spacing: 0.3px;
     }
 
+    .song-playing-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin-top: 0.85rem;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #b45309;
+      background: #fef3c7;
+      padding: 0.45rem 1.25rem;
+      border-radius: var(--radius-full);
+      border: 1px solid #fde68a;
+      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.1);
+    }
+
+    .music-wave-bars {
+      display: inline-flex;
+      align-items: flex-end;
+      gap: 3px;
+      height: 15px;
+    }
+
+    .music-wave-bars .bar {
+      width: 3px;
+      background: #e11d48;
+      border-radius: 2px;
+      animation: soundBarWave 0.7s ease-in-out infinite alternate;
+    }
+
+    .music-wave-bars .bar:nth-child(1) { height: 6px; animation-delay: 0.1s; }
+    .music-wave-bars .bar:nth-child(2) { height: 14px; animation-delay: 0.3s; }
+    .music-wave-bars .bar:nth-child(3) { height: 9px; animation-delay: 0.2s; }
+    .music-wave-bars .bar:nth-child(4) { height: 15px; animation-delay: 0.4s; }
+
+    @keyframes soundBarWave {
+      0% { transform: scaleY(0.3); }
+      100% { transform: scaleY(1); }
+    }
+
     /* ==========================================================================
        9. SECTION: FINAL CELEBRATION FINALE & FOOTER
        ========================================================================== */
@@ -2149,6 +2188,15 @@
             <div class="wish-result-text">
               ✨ May all your beautiful wishes come true, Rishu! ✨
             </div>
+            <div class="song-playing-indicator">
+              <span class="music-wave-bars" aria-hidden="true">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+              </span>
+              <span>🎵 Playing "Happy Birthday" Song for Rishu! 🎂</span>
+            </div>
           </div>
         </div>
 
@@ -2339,10 +2387,11 @@
     }
 
     /* ==========================================================================
-       B. WEB AUDIO API SYNTHESIZER
+       B. WEB AUDIO API SYNTHESIZER (FULL HAPPY BIRTHDAY SONG ENGINE)
        ========================================================================== */
     let audioCtx = null;
     let isSoundEnabled = false;
+    let currentSongNodes = [];
 
     function initAudio() {
       if (!audioCtx) {
@@ -2354,6 +2403,156 @@
       if (audioCtx && audioCtx.state === 'suspended') {
         audioCtx.resume();
       }
+    }
+
+    function stopHappyBirthdaySong() {
+      currentSongNodes.forEach(item => {
+        try {
+          if (item && item.stop) item.stop();
+        } catch (e) {}
+      });
+      currentSongNodes = [];
+    }
+
+    // Melodious acoustic chime/celesta note synthesizer
+    function playMelodyNote(freq, startTime, duration, gainVal = 0.28) {
+      if (!audioCtx) return;
+      try {
+        const osc1 = audioCtx.createOscillator();
+        const osc2 = audioCtx.createOscillator();
+        const gainNode = audioCtx.createGain();
+        const overtoneGain = audioCtx.createGain();
+
+        // Fundamental wave
+        osc1.type = 'triangle';
+        osc1.frequency.setValueAtTime(freq, startTime);
+
+        // Warm harmonic overtone (octave chime)
+        osc2.type = 'sine';
+        osc2.frequency.setValueAtTime(freq * 2, startTime);
+
+        // Musical volume envelope
+        gainNode.gain.setValueAtTime(0.0001, startTime);
+        gainNode.gain.linearRampToValueAtTime(gainVal, startTime + 0.035);
+        gainNode.gain.exponentialRampToValueAtTime(0.0001, startTime + duration);
+
+        overtoneGain.gain.setValueAtTime(0.0001, startTime);
+        overtoneGain.gain.linearRampToValueAtTime(gainVal * 0.35, startTime + 0.035);
+        overtoneGain.gain.exponentialRampToValueAtTime(0.0001, startTime + duration);
+
+        osc1.connect(gainNode);
+        osc2.connect(overtoneGain);
+        overtoneGain.connect(gainNode);
+        gainNode.connect(audioCtx.destination);
+
+        osc1.start(startTime);
+        osc1.stop(startTime + duration);
+        osc2.start(startTime);
+        osc2.stop(startTime + duration);
+
+        currentSongNodes.push(osc1, osc2);
+      } catch (err) {
+        console.warn('Note play error:', err);
+      }
+    }
+
+    // Warm bass accompaniment note
+    function playBassNote(freq, startTime, duration, gainVal = 0.16) {
+      if (!audioCtx) return;
+      try {
+        const osc = audioCtx.createOscillator();
+        const gainNode = audioCtx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, startTime);
+
+        gainNode.gain.setValueAtTime(0.0001, startTime);
+        gainNode.gain.linearRampToValueAtTime(gainVal, startTime + 0.05);
+        gainNode.gain.exponentialRampToValueAtTime(0.0001, startTime + duration);
+
+        osc.connect(gainNode);
+        gainNode.connect(audioCtx.destination);
+
+        osc.start(startTime);
+        osc.stop(startTime + duration);
+
+        currentSongNodes.push(osc);
+      } catch (err) {}
+    }
+
+    // Full 4-Line "Happy Birthday to you" Song for Rishu!
+    function playFullHappyBirthdaySong() {
+      initAudio();
+      if (!audioCtx) return;
+      stopHappyBirthdaySong();
+
+      const now = audioCtx.currentTime + 0.05;
+      const b = 0.52; // Beat timing (~115 BPM relaxed celebratory tempo)
+
+      // [Frequency (Hz), Start Beat, Beat Duration]
+      const melody = [
+        // Line 1: "Happy Birthday to you"
+        [392.00, 0.0, 0.7],    // G4 (Hap-)
+        [392.00, 0.75, 0.25],  // G4 (-py)
+        [440.00, 1.0, 0.9],    // A4 (Birth-)
+        [392.00, 2.0, 0.9],    // G4 (-day)
+        [523.25, 3.0, 0.9],    // C5 (to)
+        [493.88, 4.0, 1.8],    // B4 (you~)
+
+        // Line 2: "Happy Birthday to you"
+        [392.00, 6.0, 0.7],    // G4 (Hap-)
+        [392.00, 6.75, 0.25],  // G4 (-py)
+        [440.00, 7.0, 0.9],    // A4 (Birth-)
+        [392.00, 8.0, 0.9],    // G4 (-day)
+        [587.33, 9.0, 0.9],    // D5 (to)
+        [523.25, 10.0, 1.8],   // C5 (you~)
+
+        // Line 3: "Happy Birthday dear Rishu"
+        [392.00, 12.0, 0.7],   // G4 (Hap-)
+        [392.00, 12.75, 0.25], // G4 (-py)
+        [783.99, 13.0, 0.9],   // G5 (Birth-)
+        [659.25, 14.0, 0.9],   // E5 (-day)
+        [523.25, 15.0, 0.9],   // C5 (dear)
+        [493.88, 16.0, 0.9],   // B4 (Ri-)
+        [440.00, 17.0, 1.8],   // A4 (-shu~)
+
+        // Line 4: "Happy Birthday to you!"
+        [698.46, 19.0, 0.7],   // F5 (Hap-)
+        [698.46, 19.75, 0.25], // F5 (-py)
+        [659.25, 20.0, 0.9],   // E5 (Birth-)
+        [523.25, 21.0, 0.9],   // C5 (-day)
+        [587.33, 22.0, 0.9],   // D5 (to)
+        [523.25, 23.0, 2.4],   // C5 (you! 🎉)
+
+        // Celebration Outro Flourish / Grand Chimes
+        [659.25, 26.0, 0.45],  // E5
+        [783.99, 26.4, 0.45],  // G5
+        [1046.50, 26.8, 1.8]   // C6 (High C final chime)
+      ];
+
+      // Bass Chords (C, G, F progression)
+      const bassChords = [
+        [130.81, 0.0, 1.8],   // C3
+        [196.00, 2.0, 1.8],   // G3
+        [196.00, 4.0, 1.8],   // G3
+        [130.81, 6.0, 1.8],   // C3
+        [196.00, 8.0, 1.8],   // G3
+        [130.81, 10.0, 1.8],  // C3
+        [130.81, 12.0, 1.8],  // C3
+        [174.61, 14.0, 1.8],  // F3
+        [220.00, 16.0, 1.8],  // A3
+        [174.61, 19.0, 1.8],  // F3
+        [130.81, 21.0, 1.8],  // C3
+        [196.00, 22.0, 1.8],  // G3
+        [130.81, 23.0, 3.5]   // C3 Final resolution
+      ];
+
+      melody.forEach(([freq, startBeat, durBeat]) => {
+        playMelodyNote(freq, now + startBeat * b, durBeat * b);
+      });
+
+      bassChords.forEach(([freq, startBeat, durBeat]) => {
+        playBassNote(freq, now + startBeat * b, durBeat * b);
+      });
     }
 
     function playNote(freq, startTime, duration, type = 'sine', gainVal = 0.15) {
@@ -2425,6 +2624,7 @@
       } else {
         soundIcon.textContent = '🔇';
         soundToggleBtn.style.background = '#fff8e6';
+        stopHappyBirthdaySong();
       }
     });
 
@@ -2623,7 +2823,12 @@
     let isWishMade = false;
 
     function makeCakeWish() {
+      // Auto-enable audio context on user click
+      isSoundEnabled = true;
       initAudio();
+      soundIcon.textContent = '🔊';
+      soundToggleBtn.style.background = '#fef3c7';
+
       const candlesGroup = document.getElementById('candles-group');
       const wishBanner = document.getElementById('wish-banner');
       const wishBtnText = document.getElementById('wish-btn-text');
@@ -2634,14 +2839,19 @@
         wishBtnText.textContent = 'RELIGHT CANDLES 🕯️';
         isWishMade = true;
 
-        fireCelebrationConfetti(window.innerWidth / 2, window.innerHeight * 0.5, 140);
+        // Big celebratory confetti burst & cannons
+        fireCelebrationConfetti(window.innerWidth / 2, window.innerHeight * 0.5, 160);
         fireDualCannons();
-        playCelebrationFanfare();
+
+        // Play the complete melodious "Happy Birthday" Song for Rishu!
+        playFullHappyBirthdaySong();
       } else {
         candlesGroup.classList.remove('blown-out');
         wishBanner.classList.remove('active');
         wishBtnText.textContent = 'MAKE A WISH 🎂';
         isWishMade = false;
+
+        stopHappyBirthdaySong();
         playMagicChime();
       }
     }
