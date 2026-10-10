@@ -1,0 +1,2666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Rishu! 🎂 A Magical Celebration</title>
+  <meta name="description" content="A special birthday announcement and surprise celebration for my amazing brother Rishu. Celebrating love, memories, and joy!">
+  
+  <!-- Google Fonts: Outfit (modern luxury), Playfair Display (editorial elegance), Caveat (heartfelt handwritten) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       1. CSS VARIABLES & LIGHT LUXURY THEME
+       ========================================================================== */
+    :root {
+      /* Backgrounds & Light Surfaces */
+      --bg-base: #fdfbf7;
+      --bg-gradient-top: #fffdf9;
+      --bg-gradient-mid: #fef2f4;
+      --bg-gradient-bot: #f5f3ff;
+      
+      --surface-white: #ffffff;
+      --surface-card: rgba(255, 255, 255, 0.88);
+      --surface-card-hover: rgba(255, 255, 255, 0.98);
+      --surface-glass-border: rgba(226, 232, 240, 0.8);
+      --surface-border-gold: rgba(245, 158, 11, 0.35);
+
+      /* Typography Colors */
+      --text-main: #0f172a;        /* Deep Slate / Charcoal */
+      --text-secondary: #334155;   /* Medium Slate */
+      --text-muted: #64748b;       /* Soft Gray */
+      --text-dim: #94a3b8;         /* Light Gray */
+
+      /* Warm Accent Tones */
+      --rose-primary: #e11d48;
+      --rose-light: #fff1f2;
+      --rose-glow: rgba(225, 29, 72, 0.2);
+
+      --pink-vibrant: #ec4899;
+      --pink-soft: #fdf2f8;
+
+      --gold-primary: #d97706;
+      --gold-amber: #f59e0b;
+      --gold-light: #fef3c7;
+      --gold-glow: rgba(245, 158, 11, 0.25);
+
+      --blue-sky: #0284c7;
+      --blue-soft: #f0f9ff;
+
+      --purple-royal: #7c3aed;
+      --purple-soft: #faf5ff;
+
+      /* Shadows & Radii */
+      --shadow-sm: 0 4px 12px rgba(15, 23, 42, 0.05);
+      --shadow-md: 0 12px 28px -6px rgba(15, 23, 42, 0.08);
+      --shadow-lg: 0 24px 50px -12px rgba(15, 23, 42, 0.12), 0 0 25px rgba(245, 158, 11, 0.08);
+      --shadow-gold: 0 14px 35px rgba(217, 119, 6, 0.2);
+
+      --radius-sm: 10px;
+      --radius-md: 18px;
+      --radius-lg: 26px;
+      --radius-xl: 36px;
+      --radius-full: 9999px;
+
+      /* Typography Fonts */
+      --font-main: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-handwriting: 'Caveat', cursive;
+
+      /* Transitions */
+      --transition-smooth: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+      --transition-bounce: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    /* ==========================================================================
+       2. GLOBAL RESET & BASE STYLES
+       ========================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      font-family: var(--font-main);
+      overflow-x: hidden;
+    }
+
+    body {
+      min-height: 100vh;
+      line-height: 1.6;
+      background: radial-gradient(circle at 50% 0%, #fffbf2 0%, #fff1f4 40%, #f4f6fb 80%, #fcfdfe 100%);
+      color: var(--text-main);
+      overflow-x: hidden;
+      position: relative;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--gold-amber);
+      outline-offset: 4px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    /* Ambient Soft Pastel Glow Orbs */
+    .ambient-orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(100px);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.6;
+      animation: floatLightOrb 20s ease-in-out infinite alternate;
+    }
+
+    .orb-1 {
+      width: 520px;
+      height: 520px;
+      background: #fde68a; /* Soft Warm Gold */
+      top: -120px;
+      left: -120px;
+    }
+
+    .orb-2 {
+      width: 480px;
+      height: 480px;
+      background: #fbcfe8; /* Soft Blush Pink */
+      top: 35%;
+      right: -100px;
+      animation-delay: -6s;
+    }
+
+    .orb-3 {
+      width: 500px;
+      height: 500px;
+      background: #bae6fd; /* Soft Sky Blue */
+      bottom: 10%;
+      left: -100px;
+      animation-delay: -12s;
+    }
+
+    @keyframes floatLightOrb {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(50px, 35px) scale(1.1); }
+      100% { transform: translate(-30px, 60px) scale(0.95); }
+    }
+
+    /* Fullscreen Canvas for Confetti & Particles */
+    #fx-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 999;
+    }
+
+    /* Layout Containers */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .section-spacing {
+      padding: 6.5rem 0;
+      position: relative;
+    }
+
+    /* Section Headers */
+    .section-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 3.5rem auto;
+    }
+
+    .section-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.45rem 1.15rem;
+      border-radius: var(--radius-full);
+      background: #fff8e6;
+      border: 1px solid #fde68a;
+      color: #b45309;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 4px 15px rgba(245, 158, 11, 0.12);
+    }
+
+    .section-badge .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #f59e0b;
+      box-shadow: 0 0 8px #f59e0b;
+      animation: pulseDot 2s infinite;
+    }
+
+    @keyframes pulseDot {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.4); opacity: 0.7; }
+    }
+
+    .section-title {
+      font-size: clamp(2.1rem, 4vw, 3.2rem);
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 1rem;
+      line-height: 1.25;
+      color: var(--text-main);
+    }
+
+    .section-subtitle {
+      color: var(--text-muted);
+      font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+      font-weight: 400;
+      max-width: 640px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* Gradient Text Utilities */
+    .text-gradient-gold {
+      background: linear-gradient(135deg, #b45309 0%, #d97706 40%, #f59e0b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .text-gradient-rose {
+      background: linear-gradient(135deg, #be123c 0%, #e11d48 40%, #f43f5e 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .text-gradient-hero {
+      background: linear-gradient(135deg, #0f172a 0%, #b45309 35%, #e11d48 70%, #7c3aed 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .text-handwritten {
+      font-family: var(--font-handwriting);
+      font-size: 1.45em;
+      color: #b45309;
+      display: inline-block;
+      transform: rotate(-2deg);
+      font-weight: 700;
+    }
+
+    /* Glassmorphism Card Utility (Light Mode) */
+    .glass-card {
+      background: var(--surface-card);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--surface-glass-border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      transition: var(--transition-smooth);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .glass-card:hover {
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(245, 158, 11, 0.35);
+    }
+
+    /* Premium Light Theme Buttons */
+    .btn-premium {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      padding: 1.05rem 2.4rem;
+      border-radius: var(--radius-full);
+      font-size: 1.02rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: #ffffff;
+      background: linear-gradient(135deg, #f43f5e 0%, #f59e0b 100%);
+      box-shadow: 0 10px 25px rgba(244, 63, 94, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.4);
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition-bounce);
+      z-index: 1;
+    }
+
+    .btn-premium:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 15px 35px rgba(244, 63, 94, 0.42), inset 0 1px 1px rgba(255, 255, 255, 0.6);
+      color: #ffffff;
+    }
+
+    .btn-premium:active {
+      transform: translateY(1px) scale(0.98);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      padding: 0.95rem 2.2rem;
+      border-radius: var(--radius-full);
+      font-size: 0.98rem;
+      font-weight: 600;
+      color: var(--text-main);
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition-smooth);
+    }
+
+    .btn-secondary:hover {
+      background: #f8fafc;
+      border-color: #cbd5e1;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Top Floating Navigation Pill */
+    .nav-pill {
+      position: fixed;
+      top: 1.25rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(226, 232, 240, 0.85);
+      padding: 0.65rem 1.6rem;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      transition: var(--transition-smooth);
+    }
+
+    .nav-brand {
+      font-weight: 800;
+      font-size: 0.95rem;
+      letter-spacing: 0.8px;
+      color: #b45309;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.35rem;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      transition: var(--transition-smooth);
+    }
+
+    .nav-link:hover {
+      color: #b45309;
+    }
+
+    .sound-toggle-btn {
+      background: #fff8e6;
+      border: 1px solid #fde68a;
+      color: #b45309;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition-smooth);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .sound-toggle-btn:hover {
+      background: #fef3c7;
+      transform: scale(1.1);
+    }
+
+    /* ==========================================================================
+       3. HERO SECTION (WITH RISHU'S REAL PHOTO & LIGHT PALETTE)
+       ========================================================================== */
+    .hero-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 7.5rem 0 5rem 0;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 3.5rem;
+    }
+
+    .hero-text-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .hero-badge {
+      animation: floatBadge 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes floatBadge {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-5px); }
+    }
+
+    .hero-pretitle {
+      font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.2px;
+    }
+
+    .hero-name-wrapper {
+      position: relative;
+      margin: 0.2rem 0 0.8rem 0;
+    }
+
+    .hero-name {
+      font-size: clamp(4.2rem, 10vw, 7.8rem);
+      font-weight: 900;
+      line-height: 0.95;
+      letter-spacing: clamp(1px, 0.8vw, 4px);
+      text-transform: uppercase;
+      background: linear-gradient(135deg, #0f172a 0%, #9f1239 30%, #be123c 55%, #d97706 80%, #f59e0b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 4px 15px rgba(225, 29, 72, 0.15));
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+      color: var(--text-secondary);
+      max-width: 580px;
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+
+    /* Rishu's Hero Photo Card */
+    .hero-photo-showcase {
+      position: relative;
+      width: 100%;
+      max-width: 440px;
+      margin: 0 auto;
+    }
+
+    .hero-photo-frame {
+      position: relative;
+      border-radius: var(--radius-xl);
+      padding: 12px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(254, 243, 199, 0.7));
+      border: 2px solid rgba(251, 191, 36, 0.5);
+      box-shadow: 0 25px 60px -10px rgba(15, 23, 42, 0.18), 0 0 35px rgba(245, 158, 11, 0.2);
+      transition: var(--transition-bounce);
+    }
+
+    .hero-photo-frame:hover {
+      transform: translateY(-8px) scale(1.01);
+      box-shadow: 0 30px 70px -10px rgba(15, 23, 42, 0.22), 0 0 45px rgba(245, 158, 11, 0.3);
+    }
+
+    .hero-photo-inner {
+      width: 100%;
+      aspect-ratio: 4 / 4.7;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      position: relative;
+      background: #f1f5f9;
+    }
+
+    .hero-photo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .hero-photo-frame:hover .hero-photo-img {
+      transform: scale(1.05);
+    }
+
+    /* Floating Badges on Photo */
+    .photo-floating-badge {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 0.65rem 1.15rem;
+      border-radius: var(--radius-full);
+      box-shadow: var(--shadow-md);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-main);
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      animation: floatBadge 3.5s ease-in-out infinite alternate;
+      z-index: 5;
+    }
+
+    .badge-top-right {
+      top: -15px;
+      right: -15px;
+      color: #b45309;
+      border-color: #fde68a;
+      animation-delay: -1s;
+    }
+
+    .badge-bottom-left {
+      bottom: -15px;
+      left: -15px;
+      color: #be123c;
+      border-color: #fbcfe8;
+      animation-delay: -2.5s;
+    }
+
+    /* Countdown Card (Light Mode) */
+    .countdown-container {
+      width: 100%;
+      padding: 1.6rem 1.5rem;
+      margin-bottom: 2.2rem;
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .countdown-header {
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      color: #b45309;
+      text-transform: uppercase;
+      font-weight: 800;
+      margin-bottom: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0.5rem;
+    }
+
+    .countdown-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.85rem;
+    }
+
+    .countdown-box {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 1rem 0.4rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      box-shadow: 0 4px 10px rgba(15, 23, 42, 0.03);
+      transition: var(--transition-smooth);
+    }
+
+    .countdown-box:hover {
+      border-color: #f59e0b;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(245, 158, 11, 0.12);
+    }
+
+    .countdown-number {
+      font-size: clamp(1.8rem, 3.8vw, 2.6rem);
+      font-weight: 800;
+      line-height: 1;
+      color: #0f172a;
+      font-feature-settings: "tnum";
+      font-variant-numeric: tabular-nums;
+    }
+
+    .countdown-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--text-muted);
+      font-weight: 700;
+      margin-top: 0.35rem;
+    }
+
+    .birthday-live-banner {
+      display: none;
+      background: linear-gradient(135deg, #fff1f2, #fef3c7);
+      border: 2px solid #f59e0b;
+      padding: 1.2rem;
+      border-radius: var(--radius-md);
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #be123c;
+      text-align: center;
+      animation: pulseLive 1.5s infinite alternate;
+    }
+
+    @keyframes pulseLive {
+      0% { transform: scale(0.99); }
+      100% { transform: scale(1.01); }
+    }
+
+    /* Floating Balloons Background Decor (Light Theme) */
+    .balloon-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .balloon {
+      position: absolute;
+      bottom: -150px;
+      border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+      opacity: 0.55;
+      animation: riseBalloon 16s linear infinite;
+    }
+
+    .balloon::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1.5px;
+      height: 25px;
+      background: rgba(100, 116, 139, 0.35);
+    }
+
+    .b1 { left: 6%; background: radial-gradient(circle at 35% 30%, #fb7185, #e11d48); animation-duration: 18s; animation-delay: 0s; width: 50px; height: 65px; }
+    .b2 { left: 24%; background: radial-gradient(circle at 35% 30%, #fde047, #f59e0b); animation-duration: 22s; animation-delay: 4s; width: 44px; height: 58px; }
+    .b3 { left: 82%; background: radial-gradient(circle at 35% 30%, #c084fc, #9333ea); animation-duration: 17s; animation-delay: 2s; width: 54px; height: 70px; }
+    .b4 { left: 93%; background: radial-gradient(circle at 35% 30%, #7dd3fc, #0284c7); animation-duration: 24s; animation-delay: 7s; width: 46px; height: 60px; }
+
+    @keyframes riseBalloon {
+      0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+      10% { opacity: 0.55; }
+      90% { opacity: 0.55; }
+      100% { transform: translateY(-130vh) rotate(20deg); opacity: 0; }
+    }
+
+    /* ==========================================================================
+       4. SECTION: A SPECIAL MESSAGE FOR RISHU (LIGHT LUXURY)
+       ========================================================================== */
+    .message-section {
+      background: linear-gradient(180deg, transparent 0%, rgba(254, 242, 242, 0.6) 50%, transparent 100%);
+    }
+
+    .message-card-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .message-card {
+      padding: clamp(2rem, 5vw, 3.8rem);
+      background: #ffffff;
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-lg);
+      position: relative;
+    }
+
+    .message-card::after {
+      content: '"';
+      position: absolute;
+      top: 1.5rem;
+      right: 2.5rem;
+      font-size: 8rem;
+      font-family: var(--font-serif);
+      color: rgba(245, 158, 11, 0.08);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .message-header {
+      display: flex;
+      align-items: center;
+      gap: 1.35rem;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid #f1f5f9;
+      padding-bottom: 1.6rem;
+    }
+
+    .brother-avatar-photo {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      border: 3px solid #f59e0b;
+      overflow: hidden;
+      flex-shrink: 0;
+      box-shadow: 0 6px 18px rgba(245, 158, 11, 0.25);
+    }
+
+    .brother-avatar-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .message-meta h3 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .message-meta p {
+      font-size: 0.95rem;
+      color: #b45309;
+      font-weight: 600;
+    }
+
+    .message-body {
+      font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+      line-height: 1.9;
+      color: var(--text-secondary);
+      margin-bottom: 2.2rem;
+    }
+
+    .message-body p {
+      margin-bottom: 1.35rem;
+    }
+
+    .message-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    .message-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid #f1f5f9;
+      padding-top: 1.6rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .message-signature {
+      font-family: var(--font-handwriting);
+      font-size: 1.9rem;
+      color: #be123c;
+      font-weight: 700;
+    }
+
+    .message-tag {
+      font-size: 0.85rem;
+      font-weight: 600;
+      background: #fdf2f8;
+      border: 1px solid #fbcfe8;
+      color: #be123c;
+      padding: 0.4rem 1.1rem;
+      border-radius: var(--radius-full);
+    }
+
+    /* Floating Heart Particles */
+    .floating-hearts-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .heart-icon {
+      position: absolute;
+      color: rgba(244, 63, 94, 0.2);
+      animation: floatHeart 12s linear infinite;
+    }
+
+    @keyframes floatHeart {
+      0% { transform: translateY(100%) scale(0.6); opacity: 0; }
+      20% { opacity: 0.45; }
+      80% { opacity: 0.45; }
+      100% { transform: translateY(-50px) scale(1.1); opacity: 0; }
+    }
+
+    /* ==========================================================================
+       5. SECTION: BIRTHDAY MEMORIES GALLERY (WITH RISHU'S REAL IMAGE)
+       ========================================================================== */
+    .memories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .memory-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+      cursor: pointer;
+      transition: var(--transition-bounce);
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .memory-card:hover {
+      transform: translateY(-8px) scale(1.01);
+      border-color: #f59e0b;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .memory-img-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: #f8fafc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .memory-real-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .memory-card:hover .memory-real-img {
+      transform: scale(1.06);
+    }
+
+    /* Styled placeholder illustrations for cards without photos */
+    .memory-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      text-align: center;
+      background: radial-gradient(circle at 50% 40%, rgba(245, 158, 11, 0.08), transparent 70%),
+                  linear-gradient(135deg, rgba(244, 63, 94, 0.05), rgba(56, 189, 248, 0.05));
+      border: 2px dashed #cbd5e1;
+      border-radius: var(--radius-md);
+      transition: var(--transition-smooth);
+    }
+
+    .memory-card:hover .memory-placeholder {
+      border-color: #f59e0b;
+      background-color: #fffdf5;
+    }
+
+    .memory-placeholder-icon {
+      font-size: 2.8rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .memory-placeholder-tag {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #b45309;
+      background: #fef3c7;
+      padding: 0.25rem 0.75rem;
+      border-radius: var(--radius-full);
+      margin-bottom: 0.5rem;
+    }
+
+    .memory-placeholder-hint {
+      font-size: 0.75rem;
+      color: var(--text-dim);
+    }
+
+    .memory-overlay-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid #cbd5e1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #0f172a;
+      font-size: 0.9rem;
+      box-shadow: var(--shadow-sm);
+      opacity: 0;
+      transform: scale(0.8);
+      transition: var(--transition-smooth);
+    }
+
+    .memory-card:hover .memory-overlay-btn {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .memory-content {
+      padding-top: 1.25rem;
+    }
+
+    .memory-category {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #e11d48;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+
+    .memory-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.4rem;
+    }
+
+    .memory-caption {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Lightbox Modal (Light Mode) */
+    .lightbox-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .lightbox-modal.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .lightbox-card {
+      background: #ffffff;
+      border-radius: var(--radius-xl);
+      max-width: 760px;
+      width: 100%;
+      overflow: hidden;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+      position: relative;
+      transform: scale(0.92);
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .lightbox-modal.active .lightbox-card {
+      transform: scale(1);
+    }
+
+    .lightbox-close-btn {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.2rem;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      color: #0f172a;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition-smooth);
+    }
+
+    .lightbox-close-btn:hover {
+      background: #e11d48;
+      color: #fff;
+      transform: rotate(90deg);
+    }
+
+    .lightbox-view-area {
+      width: 100%;
+      min-height: 380px;
+      background: #f8fafc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .lightbox-view-area img {
+      max-height: 520px;
+      width: 100%;
+      object-fit: contain;
+    }
+
+    .lightbox-details {
+      padding: 1.75rem 2rem;
+      border-top: 1px solid #f1f5f9;
+      background: #ffffff;
+    }
+
+    .lightbox-title {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--text-main);
+    }
+
+    .lightbox-caption {
+      color: var(--text-muted);
+      font-size: 1.02rem;
+      line-height: 1.6;
+    }
+
+    /* ==========================================================================
+       6. SECTION: BIRTHDAY SURPRISE (INTERACTIVE GIFT BOX)
+       ========================================================================== */
+    .surprise-section {
+      background: radial-gradient(circle at 50% 50%, rgba(254, 243, 199, 0.45) 0%, transparent 70%);
+      text-align: center;
+    }
+
+    .surprise-container {
+      max-width: 720px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .gift-stage {
+      position: relative;
+      width: 260px;
+      height: 260px;
+      margin: 1.5rem auto 2.5rem auto;
+      perspective: 1000px;
+      cursor: pointer;
+    }
+
+    /* 3D-effect Gift Box (Vibrant Ruby & Golden Ribbon on Light Mode) */
+    .gift-box {
+      width: 170px;
+      height: 150px;
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #f43f5e 0%, #e11d48 60%, #be123c 100%);
+      border-radius: 14px;
+      box-shadow: 0 20px 45px rgba(225, 29, 72, 0.35), 0 8px 18px rgba(15, 23, 42, 0.08);
+      transition: var(--transition-bounce);
+    }
+
+    .gift-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 32px;
+      height: 100%;
+      background: linear-gradient(180deg, #fde047 0%, #fbbf24 60%, #d97706 100%);
+      box-shadow: 0 0 12px rgba(251, 191, 36, 0.5);
+    }
+
+    .gift-box::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 100%;
+      height: 32px;
+      background: linear-gradient(90deg, #fde047 0%, #fbbf24 60%, #d97706 100%);
+      box-shadow: 0 0 12px rgba(251, 191, 36, 0.5);
+    }
+
+    .gift-lid {
+      width: 194px;
+      height: 48px;
+      position: absolute;
+      bottom: 160px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #fb7185 0%, #f43f5e 100%);
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(15, 23, 42, 0.15);
+      transition: all 0.65s cubic-bezier(0.34, 1.56, 0.64, 1);
+      z-index: 5;
+    }
+
+    .gift-lid::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 32px;
+      height: 100%;
+      background: linear-gradient(180deg, #fde047, #fbbf24);
+    }
+
+    .gift-bow {
+      position: absolute;
+      top: -28px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 55px;
+      height: 32px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .bow-loop-left, .bow-loop-right {
+      width: 28px;
+      height: 28px;
+      border: 5px solid #fde047;
+      border-radius: 50% 50% 10% 50%;
+      background: #fbbf24;
+      box-shadow: 0 0 12px rgba(251, 191, 36, 0.5);
+    }
+
+    .bow-loop-left { transform: rotate(-35deg); }
+    .bow-loop-right { transform: rotate(35deg) scaleX(-1); }
+
+    .bow-knot {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 14px;
+      height: 14px;
+      background: #f59e0b;
+      border-radius: 50%;
+      border: 2px solid #fef08a;
+    }
+
+    .gift-stage:hover .gift-box {
+      transform: translateX(-50%) translateY(-5px);
+    }
+
+    .gift-stage:hover .gift-lid {
+      transform: translateX(-50%) translateY(-9px);
+    }
+
+    .gift-stage.opened .gift-lid {
+      transform: translateX(-50%) translateY(-85px) rotate(-18deg) scale(0.95);
+      opacity: 0.9;
+    }
+
+    .gift-stage.opened .gift-box {
+      box-shadow: 0 25px 60px rgba(245, 158, 11, 0.4), 0 0 40px rgba(244, 63, 94, 0.3);
+    }
+
+    .surprise-card-reveal {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: all 0.75s cubic-bezier(0.25, 1, 0.5, 1);
+      width: 100%;
+    }
+
+    .surprise-card-reveal.active {
+      max-height: 650px;
+      opacity: 1;
+      margin-top: 1.5rem;
+    }
+
+    .surprise-card-inner {
+      padding: clamp(2rem, 4vw, 3.2rem);
+      background: #ffffff;
+      border: 2px solid #f59e0b;
+      border-radius: var(--radius-xl);
+      box-shadow: 0 25px 60px rgba(245, 158, 11, 0.2);
+      animation: surprisePop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    @keyframes surprisePop {
+      0% { transform: scale(0.85); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .surprise-banner-text {
+      font-size: clamp(2rem, 4.5vw, 2.9rem);
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .surprise-subtext {
+      font-size: 1.15rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      max-width: 620px;
+      margin: 0 auto 1.5rem auto;
+    }
+
+    /* ==========================================================================
+       7. SECTION: BIRTHDAY WISHES (LIGHT PASTEL PALETTE)
+       ========================================================================== */
+    .wishes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .wish-card {
+      padding: 2.5rem 2rem;
+      border-radius: var(--radius-xl);
+      position: relative;
+      transition: var(--transition-bounce);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      background: #ffffff;
+    }
+
+    .wish-card:hover {
+      transform: translateY(-10px);
+    }
+
+    /* Distinct Light Pastel Gradients */
+    .wish-card-1 {
+      background: linear-gradient(160deg, #fff1f2 0%, #ffffff 60%);
+      border: 1px solid #fecdd3;
+      box-shadow: 0 10px 30px rgba(244, 63, 94, 0.08);
+    }
+
+    .wish-card-1:hover {
+      border-color: #f43f5e;
+      box-shadow: 0 20px 45px rgba(244, 63, 94, 0.18);
+    }
+
+    .wish-card-2 {
+      background: linear-gradient(160deg, #f0f9ff 0%, #ffffff 60%);
+      border: 1px solid #bae6fd;
+      box-shadow: 0 10px 30px rgba(56, 189, 248, 0.08);
+    }
+
+    .wish-card-2:hover {
+      border-color: #0284c7;
+      box-shadow: 0 20px 45px rgba(56, 189, 248, 0.18);
+    }
+
+    .wish-card-3 {
+      background: linear-gradient(160deg, #fffbeb 0%, #ffffff 60%);
+      border: 1px solid #fde68a;
+      box-shadow: 0 10px 30px rgba(245, 158, 11, 0.08);
+    }
+
+    .wish-card-3:hover {
+      border-color: #f59e0b;
+      box-shadow: 0 20px 45px rgba(245, 158, 11, 0.18);
+    }
+
+    .wish-icon-box {
+      width: 65px;
+      height: 65px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .wish-card-1 .wish-icon-box { background: #ffe4e6; color: #e11d48; }
+    .wish-card-2 .wish-icon-box { background: #e0f2fe; color: #0284c7; }
+    .wish-card-3 .wish-icon-box { background: #fef3c7; color: #d97706; }
+
+    .wish-title {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.85rem;
+    }
+
+    .wish-text {
+      color: var(--text-secondary);
+      font-size: 1.02rem;
+      line-height: 1.75;
+      flex-grow: 1;
+    }
+
+    /* ==========================================================================
+       8. SECTION: BIRTHDAY CAKE & CELEBRATION
+       ========================================================================== */
+    .cake-section {
+      background: linear-gradient(180deg, transparent 0%, rgba(254, 243, 199, 0.4) 50%, transparent 100%);
+      text-align: center;
+    }
+
+    .cake-stage {
+      max-width: 580px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .cake-illustration-wrapper {
+      position: relative;
+      width: 320px;
+      height: 290px;
+      margin: 1rem auto 2.5rem auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cake-base {
+      position: absolute;
+      bottom: 20px;
+      width: 250px;
+      height: 90px;
+      background: linear-gradient(180deg, #f43f5e 0%, #be123c 100%);
+      border-radius: 18px 18px 26px 26px;
+      box-shadow: 0 15px 35px rgba(225, 29, 72, 0.25), inset 0 2px 4px rgba(255, 255, 255, 0.4);
+    }
+
+    .cake-layer-frosting {
+      position: absolute;
+      top: -12px;
+      left: 0;
+      width: 100%;
+      height: 24px;
+      background: #fbbf24;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(251, 191, 36, 0.4);
+    }
+
+    .cake-top-tier {
+      position: absolute;
+      bottom: 95px;
+      width: 180px;
+      height: 75px;
+      background: linear-gradient(180deg, #fb7185 0%, #e11d48 100%);
+      border-radius: 14px 14px 20px 20px;
+      box-shadow: 0 10px 25px rgba(225, 29, 72, 0.2), inset 0 2px 4px rgba(255, 255, 255, 0.4);
+    }
+
+    .cake-top-frosting {
+      position: absolute;
+      top: -10px;
+      left: 0;
+      width: 100%;
+      height: 20px;
+      background: #fde047;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(251, 191, 36, 0.4);
+    }
+
+    .cake-plate {
+      position: absolute;
+      bottom: 10px;
+      width: 290px;
+      height: 18px;
+      background: linear-gradient(180deg, #ffffff, #e2e8f0);
+      border-radius: 50%;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+    }
+
+    .candles-group {
+      position: absolute;
+      bottom: 165px;
+      display: flex;
+      gap: 24px;
+      z-index: 10;
+    }
+
+    .candle {
+      position: relative;
+      width: 12px;
+      height: 48px;
+      background: repeating-linear-gradient(45deg, #ffffff, #ffffff 6px, #0284c7 6px, #0284c7 12px);
+      border-radius: 4px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    .candle.candle-pink {
+      background: repeating-linear-gradient(45deg, #ffffff, #ffffff 6px, #f43f5e 6px, #f43f5e 12px);
+    }
+
+    .candle.candle-gold {
+      background: repeating-linear-gradient(45deg, #ffffff, #ffffff 6px, #f59e0b 6px, #f59e0b 12px);
+    }
+
+    .candle::before {
+      content: '';
+      position: absolute;
+      top: -7px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 7px;
+      background: #333;
+    }
+
+    .flame {
+      position: absolute;
+      top: -26px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 14px;
+      height: 22px;
+      background: radial-gradient(circle at 50% 80%, #ffffff 0%, #fde047 30%, #f97316 75%, transparent 100%);
+      border-radius: 50% 50% 20% 20%;
+      box-shadow: 0 0 16px #fbbf24, 0 0 28px #f97316;
+      animation: flickerFlame 0.8s ease-in-out infinite alternate;
+      transform-origin: 50% 90%;
+      transition: all 0.5s ease-out;
+    }
+
+    @keyframes flickerFlame {
+      0% { transform: translateX(-50%) rotate(-2deg) scale(1); }
+      100% { transform: translateX(-50%) rotate(3deg) scale(1.1); }
+    }
+
+    .candles-group.blown-out .flame {
+      opacity: 0;
+      transform: translateX(-50%) translateY(-15px) scale(0.2);
+    }
+
+    .smoke-puff {
+      position: absolute;
+      top: -24px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 8px;
+      height: 8px;
+      background: rgba(100, 116, 139, 0.5);
+      border-radius: 50%;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .candles-group.blown-out .smoke-puff {
+      animation: smokeRise 1.2s ease-out forwards;
+    }
+
+    @keyframes smokeRise {
+      0% { opacity: 0.8; transform: translateX(-50%) scale(1); }
+      100% { opacity: 0; transform: translateX(-50%) translateY(-35px) scale(3.5); }
+    }
+
+    .wish-result-banner {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+      margin-top: 1.5rem;
+      pointer-events: none;
+    }
+
+    .wish-result-banner.active {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .wish-result-card {
+      background: #ffffff;
+      border: 2px solid #f59e0b;
+      border-radius: var(--radius-md);
+      padding: 1.2rem 2.2rem;
+      box-shadow: 0 10px 30px rgba(245, 158, 11, 0.15);
+    }
+
+    .wish-result-text {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #be123c;
+      letter-spacing: 0.3px;
+    }
+
+    /* ==========================================================================
+       9. SECTION: FINAL CELEBRATION FINALE & FOOTER
+       ========================================================================== */
+    .finale-section {
+      padding: 8rem 0 5rem 0;
+      position: relative;
+      text-align: center;
+      background: radial-gradient(circle at 50% 60%, rgba(254, 242, 242, 0.8) 0%, rgba(253, 251, 247, 0.95) 100%);
+      overflow: hidden;
+    }
+
+    .finale-headline {
+      font-size: clamp(2.6rem, 7vw, 5.5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .finale-quote {
+      font-size: clamp(1.15rem, 2.5vw, 1.6rem);
+      color: var(--text-secondary);
+      max-width: 780px;
+      margin: 0 auto 3rem auto;
+      line-height: 1.75;
+      font-weight: 400;
+    }
+
+    .finale-cta-group {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 5rem;
+    }
+
+    .site-footer {
+      border-top: 1px solid #e2e8f0;
+      padding: 2.5rem 0;
+      text-align: center;
+    }
+
+    .footer-text {
+      font-size: 1rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-heart {
+      color: var(--rose-primary);
+      animation: heartbeat 1.5s infinite;
+      display: inline-block;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+    }
+
+    /* ==========================================================================
+       10. RESPONSIVE DESIGN & ACCESSIBILITY
+       ========================================================================== */
+    @media (max-width: 960px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 3rem;
+      }
+      .hero-text-content {
+        align-items: center;
+        text-align: center;
+      }
+      .countdown-header {
+        justify-content: center;
+      }
+      .nav-links {
+        display: none;
+      }
+      .nav-pill {
+        width: calc(100% - 3rem);
+        justify-content: space-between;
+      }
+      .section-spacing {
+        padding: 4.5rem 0;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .countdown-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .btn-premium, .btn-secondary {
+        width: 100%;
+      }
+      .message-card {
+        padding: 1.5rem;
+      }
+      .cake-illustration-wrapper {
+        transform: scale(0.85);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient Light Pastel Orbs -->
+  <div class="ambient-orb orb-1" aria-hidden="true"></div>
+  <div class="ambient-orb orb-2" aria-hidden="true"></div>
+  <div class="ambient-orb orb-3" aria-hidden="true"></div>
+
+  <!-- Background Canvas for Confetti & Sparkles -->
+  <canvas id="fx-canvas" aria-hidden="true"></canvas>
+
+  <!-- Top Floating Navigation Pill -->
+  <header class="nav-pill">
+    <a href="#hero" class="nav-brand">
+      <span>🎂</span>
+      <span>RISHU'S DAY</span>
+    </a>
+    <nav aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li><a href="#message" class="nav-link">Message</a></li>
+        <li><a href="#memories" class="nav-link">Memories</a></li>
+        <li><a href="#surprise" class="nav-link">Surprise</a></li>
+        <li><a href="#wishes" class="nav-link">Wishes</a></li>
+        <li><a href="#cake" class="nav-link">Cake</a></li>
+      </ul>
+    </nav>
+    <button id="sound-toggle" class="sound-toggle-btn" aria-label="Toggle Sound Atmosphere" title="Toggle Sound Atmosphere">
+      <span id="sound-icon">🎵</span>
+    </button>
+  </header>
+
+  <main>
+    <!-- =======================================================================
+         3. HERO SECTION: THE GRAND BIRTHDAY ANNOUNCEMENT WITH RISHU'S PHOTO
+         ======================================================================= -->
+    <section id="hero" class="hero-section">
+      <!-- Floating Balloons -->
+      <div class="balloon-container" aria-hidden="true">
+        <div class="balloon b1"></div>
+        <div class="balloon b2"></div>
+        <div class="balloon b3"></div>
+        <div class="balloon b4"></div>
+      </div>
+
+      <div class="container">
+        <div class="hero-grid">
+          
+          <!-- Left Column: Announcement & Countdown -->
+          <div class="hero-text-content">
+            <!-- Glowing Announcement Badge -->
+            <div class="section-badge hero-badge">
+              <span class="dot"></span>
+              <span>A SPECIAL DAY IS COMING</span>
+            </div>
+
+            <!-- Headline -->
+            <h2 class="hero-pretitle">Something Magical Is Coming...</h2>
+
+            <!-- Massive Glowing Name -->
+            <div class="hero-name-wrapper">
+              <h1 class="hero-name">RISHU</h1>
+            </div>
+
+            <!-- Subtitle -->
+            <p class="hero-subtitle">
+              Get ready to celebrate someone truly special! Counting down every second until 7 November to celebrate the greatest brother in the universe.
+            </p>
+
+            <!-- Dynamic Countdown Card -->
+            <div class="countdown-container" aria-label="Countdown to 7 November">
+              <div class="countdown-header">
+                <span>✨</span>
+                <span id="countdown-title">COUNTDOWN TO 7 NOVEMBER</span>
+                <span>✨</span>
+              </div>
+
+              <div id="countdown-grid" class="countdown-grid">
+                <div class="countdown-box">
+                  <span id="cd-days" class="countdown-number">00</span>
+                  <span class="countdown-label">Days</span>
+                </div>
+                <div class="countdown-box">
+                  <span id="cd-hours" class="countdown-number">00</span>
+                  <span class="countdown-label">Hours</span>
+                </div>
+                <div class="countdown-box">
+                  <span id="cd-minutes" class="countdown-number">00</span>
+                  <span class="countdown-label">Minutes</span>
+                </div>
+                <div class="countdown-box">
+                  <span id="cd-seconds" class="countdown-number">00</span>
+                  <span class="countdown-label">Seconds</span>
+                </div>
+              </div>
+
+              <!-- Birthday Live Mode (Visible on 7 Nov) -->
+              <div id="birthday-live" class="birthday-live-banner">
+                🎉 TODAY IS THE BIG DAY! HAPPY BIRTHDAY RISHU! 🎂🥳
+              </div>
+            </div>
+
+            <!-- Hero CTA Button -->
+            <div>
+              <button id="hero-celebrate-btn" class="btn-premium" onclick="triggerHeroCelebration()">
+                <span>LET THE CELEBRATION BEGIN</span>
+                <span>🎉</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Right Column: Hero Portrait Showcase with Rishu's Real Photo -->
+          <div class="hero-photo-showcase">
+            <div class="hero-photo-frame">
+              <!-- Floating Pill Badges -->
+              <div class="photo-floating-badge badge-top-right">
+                <span>👑</span>
+                <span>The Birthday Boy</span>
+              </div>
+              <div class="photo-floating-badge badge-bottom-left">
+                <span>🏍️</span>
+                <span>Royal Enfield Rider</span>
+              </div>
+
+              <!-- Rishu's Image -->
+              <div class="hero-photo-inner">
+                <img src="rishu.jpg" alt="Rishu with his Royal Enfield" class="hero-photo-img" id="hero-main-photo">
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         4. A SPECIAL MESSAGE FOR RISHU
+         ======================================================================= -->
+    <section id="message" class="section-spacing message-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">
+            <span class="dot"></span>
+            <span>HEARTFELT DEDICATION</span>
+          </div>
+          <h2 class="section-title">To My Amazing Brother <span class="footer-heart">❤️</span></h2>
+          <p class="section-subtitle">
+            Words can never fully capture how much you mean to me, but today, I want to remind you of just how exceptional you are.
+          </p>
+        </div>
+
+        <div class="message-card-wrapper">
+          <article class="glass-card message-card">
+            <!-- Floating Hearts Background Decor -->
+            <div class="floating-hearts-bg" aria-hidden="true">
+              <span class="heart-icon" style="left: 10%; animation-delay: 0s;">❤️</span>
+              <span class="heart-icon" style="left: 35%; animation-delay: 4s;">💖</span>
+              <span class="heart-icon" style="left: 70%; animation-delay: 2s;">✨</span>
+              <span class="heart-icon" style="left: 85%; animation-delay: 6s;">❤️</span>
+            </div>
+
+            <div class="message-header">
+              <!-- Avatar badge with Rishu's real photo -->
+              <div class="brother-avatar-photo">
+                <img src="rishu.jpg" alt="Rishu">
+              </div>
+              <div class="message-meta">
+                <h3>For Rishu</h3>
+                <p>The One & Only Brother, Friend & Anchor</p>
+              </div>
+            </div>
+
+            <div class="message-body">
+              <p>
+                Dear Rishu, growing up with you has been one of life’s greatest blessings. From the carefree days of our childhood filled with silly games, endless laughs, and secret conspiracies, to standing shoulder-to-shoulder as we chase our biggest dreams — you’ve always been more than just a brother. You are my <span class="text-handwritten">partner-in-crime</span> and my safest haven.
+              </p>
+              <p>
+                Whenever life threw challenges, your strength gave me courage. Whenever days felt heavy, your sense of humor brought sunshine back into the room. You have this rare, beautiful gift of lifting everyone around you with your kindness, your loyalty, and your genuine heart. Having you in my corner makes me feel like I can conquer anything.
+              </p>
+              <p>
+                On this birthday, I pray that the universe opens every door of success for you. May your days be filled with genuine smiles, peaceful moments, good health, and dreams fulfilled. No matter where life takes us, remember that you will always have someone who believes in you fiercely and loves you without condition.
+              </p>
+              <p>
+                Happy Birthday, champion. Thank you for simply being <span class="text-handwritten">YOU</span>!
+              </p>
+            </div>
+
+            <div class="message-footer">
+              <div class="message-signature">
+                With all my love & pride, always ❤️
+              </div>
+              <div class="message-tag">
+                Brotherly Love • Forever Bond
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         5. BIRTHDAY MEMORIES GALLERY (WITH RISHU'S REAL PHOTO INCLUDED)
+         ======================================================================= -->
+    <section id="memories" class="section-spacing memories-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">
+            <span class="dot"></span>
+            <span>TIMELESS TREASURES</span>
+          </div>
+          <h2 class="section-title">Our Memories, Our Moments <span class="text-gradient-gold">📸</span></h2>
+          <p class="section-subtitle">
+            A small glimpse into the laughter, the adventures, and the unforgettable milestones that make our brotherhood priceless.
+          </p>
+        </div>
+
+        <div class="memories-grid">
+          
+          <!-- Memory Card 1: Features Rishu's Real Photo with Royal Enfield! -->
+          <article class="memory-card" onclick="openLightbox(0)" tabindex="0" role="button" aria-label="View memory: Road Trips & Royal Enfield Rides">
+            <div class="memory-img-wrapper">
+              <img src="rishu.jpg" alt="Rishu with his Royal Enfield bike" class="memory-real-img">
+              <div class="memory-overlay-btn" aria-hidden="true">🔍</div>
+            </div>
+            <div class="memory-content">
+              <div class="memory-category">Chapter 01 • The Rider & The Open Road</div>
+              <h3 class="memory-title">Road Trips & Wild Escapes</h3>
+              <p class="memory-caption">The roaring engine of the Royal Enfield, wind in your hair, chasing horizons, and living life king size.</p>
+            </div>
+          </article>
+
+          <!-- Memory Card 2: Childhood Partners -->
+          <article class="memory-card" onclick="openLightbox(1)" tabindex="0" role="button" aria-label="View memory: Childhood Partners in Crime">
+            <div class="memory-img-wrapper">
+              <div class="memory-placeholder">
+                <span class="memory-placeholder-icon">🧸</span>
+                <span class="memory-placeholder-tag">Childhood Archive</span>
+                <span class="memory-placeholder-hint">Click to expand preview</span>
+              </div>
+              <div class="memory-overlay-btn" aria-hidden="true">🔍</div>
+            </div>
+            <div class="memory-content">
+              <div class="memory-category">Chapter 02 • Innocence</div>
+              <h3 class="memory-title">Childhood Partners in Crime</h3>
+              <p class="memory-caption">From building pillow forts to sharing sweets in secret, those young days formed our unbreakable foundation.</p>
+            </div>
+          </article>
+
+          <!-- Memory Card 3: Unfiltered Laughter -->
+          <article class="memory-card" onclick="openLightbox(2)" tabindex="0" role="button" aria-label="View memory: Unfiltered Laughter & Chaos">
+            <div class="memory-img-wrapper">
+              <div class="memory-placeholder">
+                <span class="memory-placeholder-icon">😂</span>
+                <span class="memory-placeholder-tag">Pure Happiness</span>
+                <span class="memory-placeholder-hint">Click to expand preview</span>
+              </div>
+              <div class="memory-overlay-btn" aria-hidden="true">🔍</div>
+            </div>
+            <div class="memory-content">
+              <div class="memory-category">Chapter 03 • Joy</div>
+              <h3 class="memory-title">Unfiltered Laughter & Chaos</h3>
+              <p class="memory-caption">The inside jokes that only the two of us understand, bursting into uncontrollable laughter anywhere, anytime.</p>
+            </div>
+          </article>
+
+          <!-- Memory Card 4: Festive Celebrations -->
+          <article class="memory-card" onclick="openLightbox(3)" tabindex="0" role="button" aria-label="View memory: Family Celebrations & Festive Cheer">
+            <div class="memory-img-wrapper">
+              <div class="memory-placeholder">
+                <span class="memory-placeholder-icon">🎉</span>
+                <span class="memory-placeholder-tag">Festive Days</span>
+                <span class="memory-placeholder-hint">Click to expand preview</span>
+              </div>
+              <div class="memory-overlay-btn" aria-hidden="true">🔍</div>
+            </div>
+            <div class="memory-content">
+              <div class="memory-category">Chapter 04 • Togetherness</div>
+              <h3 class="memory-title">Celebrations & Festive Cheer</h3>
+              <p class="memory-caption">Dressed up, surrounded by lights and sweets, celebrating life's happiest festivals together.</p>
+            </div>
+          </article>
+
+          <!-- Memory Card 5: Big Dreams -->
+          <article class="memory-card" onclick="openLightbox(4)" tabindex="0" role="button" aria-label="View memory: Late Night Talks & Big Dreams">
+            <div class="memory-img-wrapper">
+              <div class="memory-placeholder">
+                <span class="memory-placeholder-icon">🌌</span>
+                <span class="memory-placeholder-tag">Deep Conversations</span>
+                <span class="memory-placeholder-hint">Click to expand preview</span>
+              </div>
+              <div class="memory-overlay-btn" aria-hidden="true">🔍</div>
+            </div>
+            <div class="memory-content">
+              <div class="memory-category">Chapter 05 • Growth</div>
+              <h3 class="memory-title">Late Night Talks & Big Dreams</h3>
+              <p class="memory-caption">Stargazing and discussing the future, pushing each other to work hard, stay humble, and dream fearless.</p>
+            </div>
+          </article>
+
+          <!-- Memory Card 6: The Brotherly Bond -->
+          <article class="memory-card" onclick="openLightbox(5)" tabindex="0" role="button" aria-label="View memory: Standing Strong Together">
+            <div class="memory-img-wrapper">
+              <div class="memory-placeholder">
+                <span class="memory-placeholder-icon">🛡️</span>
+                <span class="memory-placeholder-tag">Brotherly Armor</span>
+                <span class="memory-placeholder-hint">Click to expand preview</span>
+              </div>
+              <div class="memory-overlay-btn" aria-hidden="true">🔍</div>
+            </div>
+            <div class="memory-content">
+              <div class="memory-category">Chapter 06 • The Bond</div>
+              <h3 class="memory-title">Standing Strong Together</h3>
+              <p class="memory-caption">Through every triumph and every challenge, knowing you have my back and I have yours forever.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox-modal" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="lightbox-card">
+        <button class="lightbox-close-btn" onclick="closeLightbox()" aria-label="Close photo preview">✕</button>
+        <div id="lightbox-view-area" class="lightbox-view-area">
+          <!-- Dynamic image/content inserted via JS -->
+        </div>
+        <div class="lightbox-details">
+          <h3 id="lightbox-title" class="lightbox-title">Memory Title</h3>
+          <p id="lightbox-caption" class="lightbox-caption">Memory Caption</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- =======================================================================
+         6. BIRTHDAY SURPRISE SECTION (INTERACTIVE GIFT BOX)
+         ======================================================================= -->
+    <section id="surprise" class="section-spacing surprise-section">
+      <div class="container surprise-container">
+        <div class="section-header">
+          <div class="section-badge">
+            <span class="dot"></span>
+            <span>A SPECIAL SURPRISE</span>
+          </div>
+          <h2 class="section-title">Rishu, This Surprise Is Just for You! 🎁</h2>
+          <p class="section-subtitle">
+            There’s a little secret packed inside this box. Click on the gift box or press the button below to unwrap the magic!
+          </p>
+        </div>
+
+        <!-- Interactive 3D Animated Gift Box -->
+        <div id="gift-stage" class="gift-stage" onclick="toggleGiftSurprise()" role="button" tabindex="0" aria-label="Click to open birthday surprise gift box">
+          <div class="gift-lid">
+            <div class="gift-bow">
+              <div class="bow-loop-left"></div>
+              <div class="bow-loop-right"></div>
+              <div class="bow-knot"></div>
+            </div>
+          </div>
+          <div class="gift-box"></div>
+        </div>
+
+        <!-- Trigger Button -->
+        <div>
+          <button id="surprise-btn" class="btn-premium" onclick="toggleGiftSurprise()">
+            <span id="surprise-btn-text">OPEN YOUR SURPRISE</span>
+            <span>✨</span>
+          </button>
+        </div>
+
+        <!-- Revealed Birthday Message -->
+        <div id="surprise-card" class="surprise-card-reveal" aria-live="polite">
+          <div class="surprise-card-inner">
+            <div style="font-size: 3rem; margin-bottom: 0.8rem;">🎉🎂🥳</div>
+            <h3 class="surprise-banner-text text-gradient-rose">
+              Happy Birthday, Rishu!
+            </h3>
+            <p class="surprise-subtext">
+              You deserve all the happiness, respect, success, and love in the world. ❤️<br>
+              Thank you for being the most loving, reliable, and wonderful brother anyone could ever ask for. Keep shining and inspiring everyone around you!
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+              <button class="btn-secondary" onclick="fireCelebrationConfetti()">Burst More Confetti 🎊</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         7. BIRTHDAY WISHES SECTION (LIGHT LUXURY CARDS)
+         ======================================================================= -->
+    <section id="wishes" class="section-spacing wishes-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">
+            <span class="dot"></span>
+            <span>BLESSINGS & INSPIRATION</span>
+          </div>
+          <h2 class="section-title">Wishes for Your Special Day <span class="text-gradient-gold">✨</span></h2>
+          <p class="section-subtitle">
+            Three heartfelt blessings sent with all love, wishing you nothing but the absolute best in the journey ahead.
+          </p>
+        </div>
+
+        <div class="wishes-grid">
+          <!-- Wish Card 1: Happiness and Laughter -->
+          <div class="wish-card wish-card-1">
+            <div class="wish-icon-box" aria-hidden="true">😄</div>
+            <h3 class="wish-title">Happiness & Laughter</h3>
+            <p class="wish-text">
+              May your life always be lit up with carefree laughter, radiant smiles, and peaceful moments. May heavy days never linger, and may your infectious joy continue to warm our home and hearts every day.
+            </p>
+          </div>
+
+          <!-- Wish Card 2: Success and Exciting Opportunities -->
+          <div class="wish-card wish-card-2">
+            <div class="wish-icon-box" aria-hidden="true">🚀</div>
+            <h3 class="wish-title">Success & Big Opportunities</h3>
+            <p class="wish-text">
+              May every goal you set your mind on turn into reality. May thrilling adventures, career triumphs, and visionary breakthroughs greet you at every turn. You have unlimited potential — go conquer it!
+            </p>
+          </div>
+
+          <!-- Wish Card 3: Love, Good Health, and Unforgettable Memories -->
+          <div class="wish-card wish-card-3">
+            <div class="wish-icon-box" aria-hidden="true">💎</div>
+            <h3 class="wish-title">Love, Health & Unforgettable Moments</h3>
+            <p class="wish-text">
+              Wishing you vibrant health, boundless energy, and deep lifelong bonds. May this new year bring unforgettable travel memories, cherished friendships, and the profound satisfaction of living fully.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         8. BIRTHDAY CAKE & CELEBRATION (MAKE A WISH)
+         ======================================================================= -->
+    <section id="cake" class="section-spacing cake-section">
+      <div class="container cake-stage">
+        <div class="section-header">
+          <div class="section-badge">
+            <span class="dot"></span>
+            <span>TIME TO MAKE A WISH</span>
+          </div>
+          <h2 class="section-title">Blow the Candles, Rishu! 🎂</h2>
+          <p class="section-subtitle">
+            Close your eyes, think of your deepest heart's wish, and blow out the candles to send it soaring into the universe!
+          </p>
+        </div>
+
+        <!-- Custom Birthday Cake Illustration -->
+        <div class="cake-illustration-wrapper" aria-label="Birthday Cake with animated glowing candles">
+          <div class="cake-plate"></div>
+          
+          <div class="cake-base">
+            <div class="cake-layer-frosting"></div>
+          </div>
+
+          <div class="cake-top-tier">
+            <div class="cake-top-frosting"></div>
+          </div>
+
+          <!-- Candles with Animated Flames -->
+          <div id="candles-group" class="candles-group">
+            <div class="candle candle-gold">
+              <div class="flame"></div>
+              <div class="smoke-puff"></div>
+            </div>
+            <div class="candle candle-pink" style="height: 54px; top: -6px;">
+              <div class="flame"></div>
+              <div class="smoke-puff"></div>
+            </div>
+            <div class="candle">
+              <div class="flame"></div>
+              <div class="smoke-puff"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action Button -->
+        <div>
+          <button id="make-wish-btn" class="btn-premium" onclick="makeCakeWish()">
+            <span id="wish-btn-text">MAKE A WISH 🎂</span>
+          </button>
+        </div>
+
+        <!-- Wish Success Announcement -->
+        <div id="wish-banner" class="wish-result-banner" aria-live="polite">
+          <div class="wish-result-card">
+            <div class="wish-result-text">
+              ✨ May all your beautiful wishes come true, Rishu! ✨
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         9. FINAL BIRTHDAY SECTION & FOOTER
+         ======================================================================= -->
+    <section id="finale" class="finale-section">
+      <div class="container">
+        <!-- Grand Headline -->
+        <h2 class="finale-headline text-gradient-rose">
+          HAPPY BIRTHDAY, RISHU! 🎉
+        </h2>
+
+        <!-- Emotional Closing Quote -->
+        <p class="finale-quote">
+          "To the brother who makes life more special — here’s to another magnificent year of happiness, success, laughter, and beautiful memories."
+        </p>
+
+        <!-- Final Replay Button -->
+        <div class="finale-cta-group">
+          <button class="btn-premium" onclick="celebrateAgain()">
+            <span>CELEBRATE AGAIN</span>
+            <span>🎊</span>
+          </button>
+          <a href="#hero" class="btn-secondary">
+            <span>Back to Top ⬆️</span>
+          </a>
+        </div>
+
+        <!-- Site Footer -->
+        <footer class="site-footer">
+          <p class="footer-text">
+            <span>Made with endless love for Rishu</span>
+            <span class="footer-heart">❤️</span>
+            <span>| 7 November</span>
+          </p>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <!-- =======================================================================
+       10. JAVASCRIPT: COUNTDOWN, CONFETTI ENGINE, SOUND & INTERACTIONS
+       ======================================================================= -->
+  <script>
+    /* ==========================================================================
+       A. CANVAS CONFETTI & PARTICLES ENGINE (Lightweight, 60 FPS, No Dependencies)
+       ========================================================================== */
+    const canvas = document.getElementById('fx-canvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    let animationFrameId = null;
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    const CONFETTI_COLORS = [
+      '#f59e0b', '#fbbf24', '#fde047', // Warm Gold
+      '#ec4899', '#f43f5e', '#fb7185', // Rose Pink
+      '#0284c7', '#38bdf8',             // Sky Azure
+      '#8b5cf6', '#a855f7',             // Lavender
+      '#10b981', '#ffffff'              // Emerald & White
+    ];
+
+    class Particle {
+      constructor(x, y, isSparkle = false) {
+        this.x = x;
+        this.y = y;
+        this.isSparkle = isSparkle;
+        
+        if (isSparkle) {
+          this.vx = (Math.random() - 0.5) * 3;
+          this.vy = (Math.random() - 0.5) * 3;
+          this.size = Math.random() * 4 + 2;
+          this.alpha = 1;
+          this.decay = Math.random() * 0.02 + 0.01;
+          this.color = '#f59e0b';
+        } else {
+          const angle = Math.random() * Math.PI * 2;
+          const speed = Math.random() * 12 + 4;
+          this.vx = Math.cos(angle) * speed;
+          this.vy = Math.sin(angle) * speed - 3;
+          this.gravity = 0.22;
+          this.size = Math.random() * 8 + 6;
+          this.color = CONFETTI_COLORS[Math.floor(Math.random() * CONFETTI_COLORS.length)];
+          this.rotation = Math.random() * 360;
+          this.rotationSpeed = (Math.random() - 0.5) * 12;
+          this.alpha = 1;
+          this.decay = Math.random() * 0.009 + 0.006;
+          this.shape = Math.random() > 0.4 ? 'rect' : 'circle';
+        }
+      }
+
+      update() {
+        if (!this.isSparkle) {
+          this.vy += this.gravity;
+          this.vx *= 0.985;
+          this.rotation += this.rotationSpeed;
+        }
+        this.x += this.vx;
+        this.y += this.vy;
+        this.alpha -= this.decay;
+      }
+
+      draw(context) {
+        context.save();
+        context.globalAlpha = Math.max(0, this.alpha);
+        context.fillStyle = this.color;
+        context.translate(this.x, this.y);
+
+        if (this.isSparkle) {
+          context.beginPath();
+          for (let i = 0; i < 4; i++) {
+            context.rotate(Math.PI / 2);
+            context.lineTo(this.size, 0);
+            context.lineTo(this.size * 0.3, this.size * 0.3);
+          }
+          context.fill();
+        } else if (this.shape === 'rect') {
+          context.rotate((this.rotation * Math.PI) / 180);
+          context.fillRect(-this.size / 2, -this.size / 4, this.size, this.size / 2);
+        } else {
+          context.beginPath();
+          context.arc(0, 0, this.size / 2, 0, Math.PI * 2);
+          context.fill();
+        }
+
+        context.restore();
+      }
+    }
+
+    function fireCelebrationConfetti(x = window.innerWidth / 2, y = window.innerHeight / 2, count = 120) {
+      for (let i = 0; i < count; i++) {
+        particles.push(new Particle(x, y, false));
+      }
+      if (Math.random() > 0.5) {
+        for (let j = 0; j < 30; j++) {
+          particles.push(new Particle(x, y, true));
+        }
+      }
+      if (!animationFrameId) {
+        animateParticles();
+      }
+    }
+
+    function fireDualCannons() {
+      for (let i = 0; i < 70; i++) {
+        const p1 = new Particle(window.innerWidth * 0.1, window.innerHeight * 0.9);
+        p1.vx = Math.random() * 8 + 3;
+        p1.vy = -(Math.random() * 14 + 8);
+        particles.push(p1);
+
+        const p2 = new Particle(window.innerWidth * 0.9, window.innerHeight * 0.9);
+        p2.vx = -(Math.random() * 8 + 3);
+        p2.vy = -(Math.random() * 14 + 8);
+        particles.push(p2);
+      }
+      if (!animationFrameId) {
+        animateParticles();
+      }
+    }
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = particles.length - 1; i >= 0; i--) {
+        const p = particles[i];
+        p.update();
+        p.draw(ctx);
+        if (p.alpha <= 0 || p.y > window.innerHeight + 50) {
+          particles.splice(i, 1);
+        }
+      }
+
+      if (particles.length > 0) {
+        animationFrameId = requestAnimationFrame(animateParticles);
+      } else {
+        cancelAnimationFrame(animationFrameId);
+        animationFrameId = null;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+      }
+    }
+
+    /* ==========================================================================
+       B. WEB AUDIO API SYNTHESIZER
+       ========================================================================== */
+    let audioCtx = null;
+    let isSoundEnabled = false;
+
+    function initAudio() {
+      if (!audioCtx) {
+        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+        if (AudioContextClass) {
+          audioCtx = new AudioContextClass();
+        }
+      }
+      if (audioCtx && audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+    }
+
+    function playNote(freq, startTime, duration, type = 'sine', gainVal = 0.15) {
+      if (!isSoundEnabled || !audioCtx) return;
+      try {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, startTime);
+        
+        gain.gain.setValueAtTime(gainVal, startTime);
+        gain.gain.exponentialRampToValueAtTime(0.0001, startTime + duration);
+        
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        
+        osc.start(startTime);
+        osc.stop(startTime + duration);
+      } catch (err) {
+        console.warn('Audio play note error:', err);
+      }
+    }
+
+    function playCelebrationFanfare() {
+      if (!isSoundEnabled) return;
+      initAudio();
+      if (!audioCtx) return;
+      
+      const now = audioCtx.currentTime;
+      const melody = [
+        { f: 392.00, d: 0.25, pause: 0 },
+        { f: 392.00, d: 0.25, pause: 0.3 },
+        { f: 440.00, d: 0.5, pause: 0.6 },
+        { f: 392.00, d: 0.5, pause: 1.15 },
+        { f: 523.25, d: 0.5, pause: 1.7 },
+        { f: 493.88, d: 0.9, pause: 2.25 },
+        { f: 587.33, d: 0.4, pause: 3.1 },
+        { f: 659.25, d: 0.4, pause: 3.35 },
+        { f: 783.99, d: 0.8, pause: 3.6 }
+      ];
+
+      melody.forEach(item => {
+        playNote(item.f, now + item.pause, item.d, 'triangle', 0.2);
+      });
+    }
+
+    function playMagicChime() {
+      if (!isSoundEnabled) return;
+      initAudio();
+      if (!audioCtx) return;
+
+      const now = audioCtx.currentTime;
+      const chimes = [523.25, 659.25, 783.99, 1046.50, 1318.51];
+      chimes.forEach((f, idx) => {
+        playNote(f, now + idx * 0.08, 0.6, 'sine', 0.15);
+      });
+    }
+
+    const soundToggleBtn = document.getElementById('sound-toggle');
+    const soundIcon = document.getElementById('sound-icon');
+
+    soundToggleBtn.addEventListener('click', () => {
+      initAudio();
+      isSoundEnabled = !isSoundEnabled;
+      if (isSoundEnabled) {
+        soundIcon.textContent = '🔊';
+        soundToggleBtn.style.background = '#fef3c7';
+        playMagicChime();
+      } else {
+        soundIcon.textContent = '🔇';
+        soundToggleBtn.style.background = '#fff8e6';
+      }
+    });
+
+    /* ==========================================================================
+       C. ACCURATE DYNAMIC 7 NOVEMBER COUNTDOWN TIMER
+       ========================================================================== */
+    function getNextTargetDate() {
+      const now = new Date();
+      const currentYear = now.getFullYear();
+      
+      // Target: 7 November 00:00:00 (Month 10 in JS is November)
+      let target = new Date(currentYear, 10, 7, 0, 0, 0);
+      const isBirthdayToday = (now.getMonth() === 10 && now.getDate() === 7);
+      const endOfBirthday = new Date(currentYear, 10, 7, 23, 59, 59);
+
+      if (now > endOfBirthday) {
+        target = new Date(currentYear + 1, 10, 7, 0, 0, 0);
+      }
+
+      return { target, isBirthdayToday };
+    }
+
+    function updateCountdown() {
+      const { target, isBirthdayToday } = getNextTargetDate();
+      const now = new Date();
+      const diff = target - now;
+
+      const liveBanner = document.getElementById('birthday-live');
+      const grid = document.getElementById('countdown-grid');
+      const title = document.getElementById('countdown-title');
+
+      if (isBirthdayToday) {
+        liveBanner.style.display = 'block';
+        grid.style.display = 'none';
+        title.textContent = 'TODAY IS RISHU’S BIRTHDAY!';
+        return;
+      } else {
+        liveBanner.style.display = 'none';
+        grid.style.display = 'grid';
+        title.textContent = `COUNTDOWN TO 7 NOVEMBER ${target.getFullYear()}`;
+      }
+
+      if (diff > 0) {
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / 1000 / 60) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+
+        document.getElementById('cd-days').textContent = String(days).padStart(2, '0');
+        document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+        document.getElementById('cd-minutes').textContent = String(minutes).padStart(2, '0');
+        document.getElementById('cd-seconds').textContent = String(seconds).padStart(2, '0');
+      }
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    /* ==========================================================================
+       D. HERO CELEBRATION BUTTON TRIGGER
+       ========================================================================== */
+    function triggerHeroCelebration() {
+      initAudio();
+      fireCelebrationConfetti(window.innerWidth / 2, window.innerHeight * 0.4, 150);
+      fireDualCannons();
+      playMagicChime();
+      
+      const messageSection = document.getElementById('message');
+      if (messageSection) {
+        messageSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    /* ==========================================================================
+       E. INTERACTIVE PHOTO MEMORIES LIGHTBOX
+       ========================================================================== */
+    const MEMORY_DETAILS = [
+      {
+        isRealPhoto: true,
+        imgSrc: 'rishu.jpg',
+        title: 'Road Trips & Royal Enfield Rides',
+        caption: 'The open road stretching ahead, the steady pulse of the Royal Enfield, and Rishu taking in the sunset. A picture that captures his quiet strength, confidence, and love for adventure!'
+      },
+      {
+        isRealPhoto: false,
+        icon: '🧸',
+        title: 'Childhood Partners in Crime',
+        caption: 'From our earliest days sharing toys and making mischief, you were always the coolest companion. Those sweet innocent memories are forever etched in gold.'
+      },
+      {
+        isRealPhoto: false,
+        icon: '😂',
+        title: 'Unfiltered Laughter & Chaos',
+        caption: 'Nothing compares to laughing so hard that our stomachs hurt. You have the best sense of humor, turning everyday moments into unforgettable memories.'
+      },
+      {
+        isRealPhoto: false,
+        icon: '🎉',
+        title: 'Celebrations & Festive Cheer',
+        caption: 'Celebrating our festivals and birthdays side by side! Seeing you smile brightly is always the best part of every family celebration.'
+      },
+      {
+        isRealPhoto: false,
+        icon: '🌌',
+        title: 'Late Night Talks & Big Dreams',
+        caption: 'All those conversations discussing life, hopes, and ambitions late into the night. Watching you grow into an ambitious, brilliant person fills me with pride.'
+      },
+      {
+        isRealPhoto: false,
+        icon: '🛡️',
+        title: 'Standing Strong Together',
+        caption: 'Through thick and thin, our bond only grows stronger. Knowing you are my brother is the greatest reassurance in the world. Forever by your side.'
+      }
+    ];
+
+    const lightboxModal = document.getElementById('lightbox');
+    const lightboxTitle = document.getElementById('lightbox-title');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const lightboxViewArea = document.getElementById('lightbox-view-area');
+
+    function openLightbox(index) {
+      const data = MEMORY_DETAILS[index];
+      if (!data) return;
+
+      lightboxTitle.textContent = data.title;
+      lightboxCaption.textContent = data.caption;
+      
+      if (data.isRealPhoto) {
+        lightboxViewArea.innerHTML = `
+          <img src="${data.imgSrc}" alt="${data.title}" style="max-height: 480px; width: 100%; object-fit: contain; border-radius: 12px;">
+        `;
+      } else {
+        lightboxViewArea.innerHTML = `
+          <div style="text-align: center; color: #0f172a; padding: 2rem;">
+            <div style="font-size: 5rem; margin-bottom: 1rem;">${data.icon}</div>
+            <div style="font-size: 1.15rem; font-weight: 700; color: #b45309; margin-bottom: 0.5rem;">${data.title}</div>
+            <div style="font-size: 0.9rem; color: #64748b; max-width: 420px; margin: 0 auto;">
+              [Photo Placeholder #0${index + 1}: You can replace with another real photo of Rishu in index.html]
+            </div>
+          </div>
+        `;
+      }
+
+      lightboxModal.classList.add('active');
+      lightboxModal.setAttribute('aria-hidden', 'false');
+      playMagicChime();
+    }
+
+    function closeLightbox() {
+      lightboxModal.classList.remove('active');
+      lightboxModal.setAttribute('aria-hidden', 'true');
+    }
+
+    lightboxModal.addEventListener('click', (e) => {
+      if (e.target === lightboxModal) {
+        closeLightbox();
+      }
+    });
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightboxModal.classList.contains('active')) {
+        closeLightbox();
+      }
+    });
+
+    /* ==========================================================================
+       F. INTERACTIVE GIFT BOX & SURPRISE LOGIC
+       ========================================================================== */
+    let isGiftOpened = false;
+
+    function toggleGiftSurprise() {
+      initAudio();
+      const giftStage = document.getElementById('gift-stage');
+      const surpriseCard = document.getElementById('surprise-card');
+      const surpriseBtnText = document.getElementById('surprise-btn-text');
+
+      if (!isGiftOpened) {
+        giftStage.classList.add('opened');
+        surpriseCard.classList.add('active');
+        surpriseBtnText.textContent = 'SURPRISE UNLOCKED ❤️';
+        isGiftOpened = true;
+
+        playCelebrationFanfare();
+        const rect = giftStage.getBoundingClientRect();
+        fireCelebrationConfetti(rect.left + rect.width / 2, rect.top + rect.height / 2, 160);
+        fireDualCannons();
+      } else {
+        fireCelebrationConfetti(window.innerWidth / 2, window.innerHeight * 0.5, 100);
+        playMagicChime();
+      }
+    }
+
+    /* ==========================================================================
+       G. CAKE CANDLES BLOW OUT & WISH LOGIC
+       ========================================================================== */
+    let isWishMade = false;
+
+    function makeCakeWish() {
+      initAudio();
+      const candlesGroup = document.getElementById('candles-group');
+      const wishBanner = document.getElementById('wish-banner');
+      const wishBtnText = document.getElementById('wish-btn-text');
+
+      if (!isWishMade) {
+        candlesGroup.classList.add('blown-out');
+        wishBanner.classList.add('active');
+        wishBtnText.textContent = 'RELIGHT CANDLES 🕯️';
+        isWishMade = true;
+
+        fireCelebrationConfetti(window.innerWidth / 2, window.innerHeight * 0.5, 140);
+        fireDualCannons();
+        playCelebrationFanfare();
+      } else {
+        candlesGroup.classList.remove('blown-out');
+        wishBanner.classList.remove('active');
+        wishBtnText.textContent = 'MAKE A WISH 🎂';
+        isWishMade = false;
+        playMagicChime();
+      }
+    }
+
+    /* ==========================================================================
+       H. FINALE CELEBRATE AGAIN LOGIC
+       ========================================================================== */
+    function celebrateAgain() {
+      initAudio();
+      fireCelebrationConfetti(window.innerWidth * 0.3, window.innerHeight * 0.4, 100);
+      setTimeout(() => {
+        fireCelebrationConfetti(window.innerWidth * 0.7, window.innerHeight * 0.4, 100);
+      }, 250);
+      setTimeout(() => {
+        fireDualCannons();
+      }, 500);
+
+      playCelebrationFanfare();
+    }
+  </script>
+</body>
+</html>
